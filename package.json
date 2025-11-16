@@ -1,0 +1,16 @@
+{
+"name": "@josiahsrc/x-poster",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Action has no automated tests\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Generate X posts from commit ranges and publish directly to X or X communities.",
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "node-fetch": "^2.6.7"
+  }
+}

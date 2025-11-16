@@ -1,0 +1,69 @@
+name: X Commit Poster
+description: Generate an X post from commits and publish it to the main timeline or an X community.
+author: josiahsrc
+inputs:
+  from:
+    description: Starting commit reference (inclusive) for the range to summarize.
+    required: true
+  to:
+    description: Ending commit reference (inclusive). Defaults to the workflow SHA.
+    required: false
+  include_start_commit:
+    description: Include the starting commit itself in the summarization.
+    required: false
+    default: 'true'
+  max_diff_chars:
+    description: Maximum characters of diff data to attach to each commit in the prompt.
+    required: false
+    default: '2000'
+  model:
+    description: GitHub Models identifier for generating the post copy.
+    required: false
+    default: openai/gpt-4o-mini
+  temperature:
+    description: Model temperature (0-2).
+    required: false
+    default: '0.2'
+  max_output_tokens:
+    description: Maximum tokens to request from the model.
+    required: false
+    default: '400'
+  system_prompt:
+    description: Override the system prompt sent to the model.
+    required: false
+  prompt:
+    description: Provide a custom user prompt instead of the default post instructions.
+    required: false
+  extra_instructions:
+    description: Additional guidance appended to the generated prompt.
+    required: false
+  paths:
+    description: Optional list of paths or globs to limit diffs.
+    required: false
+  community:
+    description: ID or slug of an X community to publish directly into; leave empty to post to the main timeline.
+    required: false
+  hashtags:
+    description: Comma, newline, or space separated hashtags to mention in the post (without \# or with).
+    required: false
+  tone:
+    description: Tone to adopt when writing the post (e.g., "friendly and adventurous").
+    required: false
+  call_to_action:
+    description: A short call to action to wrap up the post.
+    required: false
+runs:
+  using: node20
+  main: src/index.js
+outputs:
+  generated-post:
+    description: The copy generated for the X post.
+  post-id:
+    description: The identifier returned by the X API for the published post.
+  post-url:
+    description: A shareable link to the authored post.
+  community-id:
+    description: The community identifier used for publication (empty if posted to the timeline).
+branding:
+  color: blue
+  icon: feather

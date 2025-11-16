@@ -25643,14 +25643,6 @@ module.exports = {
 
 /***/ }),
 
-/***/ 5266:
-/***/ ((module) => {
-
-module.exports = eval("require")("node-fetch");
-
-
-/***/ }),
-
 /***/ 2613:
 /***/ ((module) => {
 
@@ -27565,7 +27557,6 @@ module.exports = parseParams
 var __webpack_exports__ = {};
 const core = __nccwpck_require__(7484);
 const { execSync } = __nccwpck_require__(5317);
-const fetch = __nccwpck_require__(5266);
 
 const MODELS_ENDPOINT = 'https://models.github.ai/inference/chat/completions';
 const DEFAULT_SYSTEM_PROMPT =

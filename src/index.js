@@ -1,6 +1,5 @@
 const core = require('@actions/core');
 const { execSync } = require('child_process');
-const fetch = require('node-fetch');
 
 const MODELS_ENDPOINT = 'https://models.github.ai/inference/chat/completions';
 const DEFAULT_SYSTEM_PROMPT =

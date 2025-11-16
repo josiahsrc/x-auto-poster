@@ -23,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Publish summary on X
-        uses: ./action
+        uses: josiahsrc/x-auto-poster@v2
         with:
           from: ${{ github.event.inputs.from }}
           to: ${{ github.sha }}
